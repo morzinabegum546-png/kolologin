@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "KoloLogin Vault",
+  "version": "2.0.0",
+  "description": "Encrypted multi-account login manager with live login status across Chrome profiles, for kolotibablo.com",
+  "permissions": ["storage"],
+  "host_permissions": ["*://*.kolotibablo.com/*", "https://*.workers.dev/*"],
+  "background": { "service_worker": "background.js" },
+  "action": { "default_popup": "popup.html", "default_title": "KoloLogin Vault" },
+  "icons": { "16": "icon16.png", "48": "icon48.png", "128": "icon128.png" },
+  "content_scripts": [
+    {
+      "matches": ["*://*.kolotibablo.com/*"],
+      "js": ["crypto.js", "api.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

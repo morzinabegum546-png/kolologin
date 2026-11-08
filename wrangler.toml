@@ -1,0 +1,8 @@
+name = "kolologin-sync"
+main = "src/index.js"
+compatibility_date = "2025-01-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "kolologin"
+database_id = "PASTE-YOUR-D1-DATABASE-ID-HERE"
